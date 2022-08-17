@@ -18,6 +18,7 @@ source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias dcom="docker-compose"
 alias lzd='lazydocker'
+# alias nvim='CC=/opt/homebrew/bin/gcc-12 nvim'
 alias nv='nvim'
 alias magit='emacsclient --tty -q -e \(magit-status\)'
 alias rl='source ~/.zshrc'
@@ -57,17 +58,22 @@ function emc()
 # }
 function ema()
 {
-  if [ "$1" = "." ]; then
-    # Turn /User/richardmcdonald/wise/wise-api into ~/wise/wise-api so that
-    # projectile matches the project name
-    project=$(echo "${PWD/#$HOME/~}")
-    start_at_project="'(projectile-switch-project-by-name \"$project\")'"
-    echo "$start_at_project" | xargs -I {} emacsclient -q -n -u -a "" -e {}
+  # if [ "$1" = "." ]; then
+  #   # Turn /User/richardmcdonald/wise/wise-api into ~/wise/wise-api so that
+  #   # projectile matches the project name
+  #   project=$(echo "${PWD/#$HOME/~}")
+  #   start_at_project="'(projectile-switch-project-by-name \"$project\")'"
+  #   echo "$start_at_project" | xargs -I {} emacsclient -q -n -u -a "" -e {}
 
-  else
-    emacsclient -c -q -n -u -a "" $*
-  fi
+  # else
+  #   emacsclient -c -q -n -u -a "" $*
+  # fi
+  cd ~
+  emacsclient -c -q -n -u -a "" $*
+  cd -
 }
+
+export PATH=~/.emacs.d/bin/doom:$PATH
 export PATH=/usr/local/bin/aws-login:$PATH
 export PATH=/usr/local/bin/build_local_images:$PATH
 export PATH=/usr/local/share/dotnet:$PATH
