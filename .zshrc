@@ -8,7 +8,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="random"
 
 plugins=(zsh-autosuggestions)
-plugins+=(zsh-nvm)
+# plugins+=(zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,7 +19,8 @@ source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias dcom="docker-compose"
 alias lzd='lazydocker'
 # alias nvim='CC=/opt/homebrew/bin/gcc-12 nvim'
-alias nv='nvim'
+# alias nv='nvim'
+alias nv="CC=/opt/homebrew/bin/gcc-12 nvim"
 alias magit='emacsclient --tty -q -e \(magit-status\)'
 alias rl='source ~/.zshrc'
 alias em='emacsclient'
