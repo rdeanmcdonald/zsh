@@ -87,6 +87,7 @@ export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 export AWS_PROFILE=mfa
+export PATH="$PATH:/Users/richardmcdonald/.dotnet/tools"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
