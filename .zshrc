@@ -21,10 +21,10 @@ source $ZSH/oh-my-zsh.sh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias dcom="docker-compose"
-alias lzd='lazydocker'
+# alias lzd='lazydocker'
 # alias nvim='CC=/opt/homebrew/bin/gcc-12 nvim'
-# alias nv='nvim'
-alias nv="CC=/opt/homebrew/bin/gcc-12 nvim"
+alias nv='nvim'
+# alias nv="CC=/opt/homebrew/bin/gcc-12 nvim"
 alias magit='emacsclient --tty -q -e \(magit-status\)'
 alias rl='source ~/.zshrc'
 alias em='emacsclient'
