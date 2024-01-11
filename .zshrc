@@ -3,16 +3,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="/Users/richardmcdonald/.oh-my-zsh"
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="random"
 
 plugins=(zsh-autosuggestions)
-# plugins+=(zsh-nvm)
-#
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,7 +74,7 @@ function ema()
   cd -
 }
 
-export PATH=~/.emacs.d/bin/doom:$PATH
+export PATH=~/.config/emacs/bin:$PATH
 export PATH=/usr/local/bin/aws-login:$PATH
 export PATH=/usr/local/bin/build_local_images:$PATH
 export PATH=/usr/local/share/dotnet:$PATH
@@ -88,6 +84,9 @@ export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 export AWS_PROFILE=mfa
 export PATH="$PATH:/Users/richardmcdonald/.dotnet/tools"
+
+export SBT_OPTS="-Xmx2G -Xss2M"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
