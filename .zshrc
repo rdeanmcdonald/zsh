@@ -5,7 +5,7 @@ fi
 export ZSH="/Users/richardmcdonald/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(zsh-autosuggestions)
+plugins=(zsh-autosuggestions fzf)
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias dcom="docker-compose"
+alias dcom="docker compose"
 # alias lzd='lazydocker'
 # alias nvim='CC=/opt/homebrew/bin/gcc-12 nvim'
 alias nv='nvim'
@@ -83,9 +83,12 @@ export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 export AWS_PROFILE=mfa
-export PATH="$PATH:/Users/richardmcdonald/.dotnet/tools"
+export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:$HOME/installs/nvim/bin"
+export PATH="$PATH:$HOME/installs/coursier"
 
 export SBT_OPTS="-Xmx2G -Xss2M"
+export JDTLS_JVM_ARGS="-javaagent:$HOME/installs/lombok/lombok.jar"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
