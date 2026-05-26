@@ -88,7 +88,6 @@ export PATH="$PATH:$HOME/installs/nvim/bin"
 export PATH="$PATH:$HOME/installs/coursier"
 
 export SBT_OPTS="-Xmx2G -Xss2M"
-export JDTLS_JVM_ARGS="-javaagent:$HOME/installs/lombok/lombok.jar"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
